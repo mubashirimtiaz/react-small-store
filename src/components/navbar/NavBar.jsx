@@ -5,7 +5,7 @@ import { CartContext } from "../../context/cartContext";
 const Navbar = () => {
   const { cartProducts } = useContext(CartContext);
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
         Small-Store
       </Link>
@@ -28,7 +28,7 @@ const Navbar = () => {
         </li>
         <li className="nav-item">
           <NavLink
-            className="nav-link bg-info p-2 rounded text-light"
+            className="nav-link bg-danger p-2 rounded text-light"
             activeClassName="active"
             to="cart"
           >
