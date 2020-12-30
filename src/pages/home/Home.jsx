@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
 import { ProductContext } from "../../context/productsContext";
 
@@ -8,7 +9,7 @@ const Home = () => {
   console.log(products);
   useEffect(() => {
     document.title = "Small-Store";
-  });
+  }, []);
   const handleClick = (product) =>
     dispatch({
       type: "ADD_PRODUCT",
@@ -48,9 +49,11 @@ const Home = () => {
                       {product.fields.price}
                     </p>
                     <p className="card-text text-right small">
-                      <button className="btn btn-sm btn-danger mr-2">
-                        Watch
-                      </button>
+                      <Link to={`details/${product.id}`}>
+                        <button className="btn btn-sm btn-danger mr-2">
+                          Watch
+                        </button>
+                      </Link>
                       <button
                         className="btn btn-sm btn-outline-danger"
                         onClick={() => handleClick(product)}
