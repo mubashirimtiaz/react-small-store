@@ -10,6 +10,7 @@ import ProductContextProvider from "./context/productsContext";
 import CartContextProvider from "./context/cartContext";
 import ProductDetail from "./pages/product_detail/ProductDetail";
 import WatchProduct from "./components/watch_product/WatchProducts";
+import Checkout from "./pages/checkout/Checkout";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="about" element={<About />}></Route>
             <Route path="contact" element={<Contact />}></Route>
             <Route path="cart" element={<Cart />}></Route>
+            <Route path="checkout" element={<Checkout />} />
             <Route path="details" element={<ProductDetail />}>
               <Route path=":prodID" element={<WatchProduct />} />
             </Route>

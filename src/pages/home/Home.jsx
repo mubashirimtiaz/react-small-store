@@ -6,7 +6,6 @@ import { ProductContext } from "../../context/productsContext";
 const Home = () => {
   const { products } = useContext(ProductContext);
   const { dispatch } = useContext(CartContext);
-  console.log(products);
   useEffect(() => {
     document.title = "Small-Store";
   }, []);
