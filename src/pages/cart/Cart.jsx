@@ -89,7 +89,7 @@ const Cart = () => {
           <div className="col-md-12 text-center">
             <p className="lead">There is no Product is your cart!</p>
             <button
-              className="btn btn-outline-info btn-lg"
+              className="btn btn-outline-danger btn-lg"
               onClick={handleClick}
             >
               Go to Products
