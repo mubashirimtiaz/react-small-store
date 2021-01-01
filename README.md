@@ -1,4 +1,4 @@
-#Application Url
+# Application Url
 
 link : https://react-small-store.netlify.app/
 
