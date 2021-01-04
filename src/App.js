@@ -11,7 +11,7 @@ import CartContextProvider from "./context/cartContext";
 import ProductDetail from "./pages/product_detail/ProductDetail";
 import WatchProduct from "./components/watch_product/WatchProducts";
 import Checkout from "./pages/checkout/Checkout";
-
+import NotFound from "./pages/not_found/NotFound";
 const App = () => {
   return (
     <>
@@ -27,6 +27,7 @@ const App = () => {
             <Route path="details" element={<ProductDetail />}>
               <Route path=":prodID" element={<WatchProduct />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </CartContextProvider>
       </ProductContextProvider>

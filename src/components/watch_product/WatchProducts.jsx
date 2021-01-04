@@ -1,12 +1,30 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ProductContext } from "../../context/productsContext";
 
 const WatchProduct = () => {
   const { prodID } = useParams();
+  const navigate = useNavigate();
   const { products } = useContext(ProductContext);
-
+  const handleNavigate = () => {
+    navigate("/", { replace: true });
+  };
   const watchedProduct = products.find(({ id }) => id === prodID);
+
+  if (!watchedProduct) {
+    return (
+      <div className="container my-5 pt-5 ">
+        <div className="row">
+          <div className="col-md-12 text-center">
+            <p className="display-4">Product not Found</p>
+            <button className="btn btn-outline-danger" onClick={handleNavigate}>
+              Go back to Home
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container my-5 pt-5">
