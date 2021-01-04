@@ -17,7 +17,7 @@ const WatchProduct = () => {
         <div className="row">
           <div className="col-md-12 text-center">
             <p className="display-4">Product not Found</p>
-            <button className="btn btn-outline-danger" onClick={handleNavigate}>
+            <button className="btn btn-outline-info" onClick={handleNavigate}>
               Go back to Home
             </button>
           </div>
