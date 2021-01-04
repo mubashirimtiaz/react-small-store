@@ -6,7 +6,7 @@ const WatchProduct = () => {
   const { prodID } = useParams();
   const navigate = useNavigate();
   const { products } = useContext(ProductContext);
-  const handleNavigate = () => {
+  const handleClick = () => {
     navigate("/", { replace: true });
   };
   const watchedProduct = products.find(({ id }) => id === prodID);
@@ -17,7 +17,7 @@ const WatchProduct = () => {
         <div className="row">
           <div className="col-md-12 text-center">
             <p className="display-4">Product not Found</p>
-            <button className="btn btn-outline-info" onClick={handleNavigate}>
+            <button className="btn btn-outline-info" onClick={handleClick}>
               Go back to Home
             </button>
           </div>
