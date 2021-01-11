@@ -1,0 +1,16 @@
+ul {
+  display: flex;
+}
+ul li {
+  display: inline;
+}
+.nav-link {
+  color: #fff;
+}
+.nav-link:hover {
+  color: #aaa;
+}
+.nav-link.active {
+  color: #aaa;
+  font-weight: bold;
+}
