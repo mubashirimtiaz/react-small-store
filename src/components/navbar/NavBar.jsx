@@ -5,13 +5,13 @@ import { CartContext } from "../../context/cartContext";
 const Navbar = () => {
   const { cartProducts } = useContext(CartContext);
   return (
-    <nav className="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link className="navbar-brand  font-weight-bold" to="/">
           Small-Store
         </Link>
 
-        <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+        <ul className="navbar-nav ml-auto mt-2  mt-lg-0">
           <li className="nav-item">
             <NavLink className="nav-link" activeClassName="active" to="/" end>
               Home

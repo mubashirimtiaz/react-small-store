@@ -36,30 +36,32 @@ const Home = () => {
                     width="300"
                   />
                   <div className="card-body">
-                    <h6 className="card-title font-weight-bold">
+                    <h6 className="card-title mb-4 font-weight-bold">
                       {product.fields.name.toUpperCase()}{" "}
                       <span className="small mx-3 bg-danger text-light rounded px-2 py-1">
                         {" "}
                         {product.fields.company}{" "}
                       </span>
                     </h6>
-                    <p className="card-text lead">
-                      <sup>$</sup>
-                      {product.fields.price}
-                    </p>
-                    <p className="card-text text-right small">
-                      <Link to={`details/${product.id}`}>
-                        <button className="btn btn-sm btn-danger mr-2">
-                          Watch
+                    <div className="d-flex justify-content-between align-items-center">
+                      <p className="card-text lead my-auto">
+                        <sup>$</sup>
+                        {product.fields.price}
+                      </p>
+                      <p className="card-text text-right small">
+                        <Link to={`details/${product.id}`}>
+                          <button className="btn btn-sm btn-danger mr-2">
+                            View
+                          </button>
+                        </Link>
+                        <button
+                          className="btn btn-sm btn-outline-danger"
+                          onClick={() => handleClick(product)}
+                        >
+                          Add to cart
                         </button>
-                      </Link>
-                      <button
-                        className="btn btn-sm btn-outline-danger"
-                        onClick={() => handleClick(product)}
-                      >
-                        Add to cart
-                      </button>
-                    </p>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

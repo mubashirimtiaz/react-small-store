@@ -36,45 +36,50 @@ const Cart = () => {
               Clear Cart
             </button>
           </div>
-          {cartProducts
-            .sort((a, b) => b.price - a.price)
-            .map((product) => {
-              return (
-                <div className="col-md-12 card p-0 my-2" key={product.id}>
-                  <div className="row">
-                    <div className="col-md-2">
+          <div className="card-deck">
+            {cartProducts
+              .sort((a, b) => b.price - a.price)
+              .map((product) => {
+                return (
+                  <div className="col-md-4 my-3" key={product.id}>
+                    <div className="card shadow-sm">
                       <img
                         src={product.imageUrl}
-                        alt={product.imageUrl}
-                        height="150"
-                        width="180"
+                        className="card-img-top"
+                        alt={product.name}
+                        height="300"
+                        width="300"
                       />
-                    </div>
-                    <div className="col-md-7 m-auto">
-                      <p className="lead"> {product.name.toUpperCase()}</p>
-                      <h5>${product.price}</h5>
-                    </div>
-                    <div className="col-md-3 m-auto d-flex justify-content-center align-item-center">
-                      <p
-                        style={{ cursor: "pointer" }}
-                        className="lead m-auto"
-                        onClick={() => handleDec(product.id)}
-                      >
-                        -
-                      </p>
-                      <p className="lead mx-3 m-auto">{product.qty}</p>
-                      <p
-                        style={{ cursor: "pointer" }}
-                        className="lead m-auto"
-                        onClick={() => handleInc(product)}
-                      >
-                        +
-                      </p>
+                      <div className="card-body">
+                        <h6 className="card-title mb-4 font-weight-bold">
+                          {product.name.toUpperCase()}
+                        </h6>
+                        <div className="d-flex align-item-center justify-content-between">
+                          <h5 className="my-auto w-50">${product.price}</h5>
+                          <div className="d-flex justify-content-center align-item-between w-50">
+                            <p
+                              style={{ cursor: "pointer" }}
+                              className="lead m-auto"
+                              onClick={() => handleDec(product.id)}
+                            >
+                              -
+                            </p>
+                            <p className="lead mx-3 m-auto">{product.qty}</p>
+                            <p
+                              style={{ cursor: "pointer" }}
+                              className="lead m-auto"
+                              onClick={() => handleInc(product)}
+                            >
+                              +
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+          </div>
           <div className="div col-md-4">
             <button className="btn btn-outline-info" onClick={handleCheckout}>
               Checkout
